@@ -7,7 +7,7 @@ class UserDefined {
 
   get version() {
 
-    return '1.0.1';
+    return '1.0.0';
   }
 
   get router() {
@@ -336,51 +336,8 @@ class UserDefined {
       return copy;
     }
 
-    const getTokenValue = (oldToken) => {
-
-      if (!oldToken) {
-        return false;
-      }
-
-      try {
-        const token = oldToken.replace("_", "/").replace("-", "+");
-
-        const decodedData = window.atob(token.split(".")[1]);
-
-        return JSON.parse(decodedData);
-      } catch (e) {
-        return false;
-      }
-    }
-
-    // format {String} - 日期格式，例如：'yyyy-MM-dd hh:mm:ss' or 'yyyy-MM-dd' or 'hh:mm:ss'
-    const formatDate = (format = 'yyyy-MM-dd hh:mm:ss', date = new Date()) => {
-
-      const yyyy = date.getFullYear();
-      const MM = (date.getMonth() + 1) > 10 ? (date.getMonth() + 1) : `0${(date.getMonth() + 1)}`;
-      const dd = date.getDate() > 10 ? date.getDate() : `0${date.getDate()}`;
-
-      const hh = date.getHours() > 10 ? date.getHours() : `0${date.getHours()}`;
-      const mm = date.getMinutes() > 10 ? date.getMinutes() : `0${date.getMinutes()}`;
-      const ss = date.getSeconds() > 10 ? date.getSeconds() : `0${date.getSeconds()}`;
-
-      if (format === 'yyyy-MM-dd hh:mm:ss') {
-        return `${yyyy}-${MM}-${dd} ${hh}:${mm}:${ss}`;
-      }
-
-      if (format === 'yyyy-MM-dd') {
-        return `${yyyy}-${MM}-${dd}`;
-      }
-
-      if (format === 'hh:mm:ss') {
-        return `${hh}:${mm}:${ss}`;
-      }
-    };
-
     return {
       copyText,  // fn
-      getTokenValue,  // fn
-      formatDate,  // fn
     }
   }
 

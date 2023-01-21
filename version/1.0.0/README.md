@@ -133,13 +133,6 @@ window.ud.page.isWx
 ```js
 // 复制文本
 window.ud.utils.copyText('复制文本')
-
-// 解密jwt(token)
-window.ud.utils.getTokenValue('token')
-
-// 格式化时间
-// 'yyyy-MM-dd hh:mm:ss' or 'yyyy-MM-dd' or 'hh:mm:ss'
-window.ud.utils.formatDate('yyyy-MM-dd hh:mm:ss')
 ```
 
 
