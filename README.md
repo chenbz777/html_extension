@@ -1,5 +1,7 @@
 # user_defined文档
 
+[toc]
+
 
 
 ## 引入
@@ -182,7 +184,7 @@ window.ud.dialog.close()
 ### 标识
 
 ```js
-window.ud.identification('openid')
+window.ud.identification('唯一id')
 ```
 
 > 根据图片，在截图右上角和左下角，打开ps，调整曲线，即可看到对应的文字
