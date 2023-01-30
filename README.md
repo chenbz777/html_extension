@@ -43,8 +43,8 @@ window.ud.router.replace()
 // 重载页面,保留前进后退
 window.ud.router.reload()
 
-// 地址栏参数
-window.ud.router.parameter
+// 获取地址栏参数
+window.ud.router.parameter  // {}
 ```
 
 
@@ -117,13 +117,13 @@ window.ud.page.url
 window.ud.page.goTop(0)
 
 // 是否移动端
-window.ud.page.isMobile
+window.ud.page.isMobile  // true or false
 
 // 是否pc端
-window.ud.page.isPc
+window.ud.page.isPc  // true or false
 
 // 是否在微信浏览器下
-window.ud.page.isWx
+window.ud.page.isWx  // true or false
 ```
 
 
