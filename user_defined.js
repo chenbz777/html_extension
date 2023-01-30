@@ -7,7 +7,7 @@ class UserDefined {
 
   get version() {
 
-    return '1.0.1';
+    return '1.0.0';
   }
 
   get router() {
@@ -377,10 +377,32 @@ class UserDefined {
       }
     };
 
+    const getValueType = (value) => {
+
+      let type = typeof value;
+
+      if (type === 'object') {
+        if (Array.isArray(value)) {
+          return 'array';
+        }
+
+        if (value === null) {
+          return 'null';
+        }
+
+        if (Array.isArray(value)) {
+          return 'array';
+        }
+      }
+
+      return type;
+    }
+
     return {
       copyText,  // fn
       getTokenValue,  // fn
       formatDate,  // fn
+      getValueType,  // fn
     }
   }
 
