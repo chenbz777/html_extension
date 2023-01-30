@@ -10,9 +10,14 @@ class UserDefined {
     return '1.0.0';
   }
 
+  get docs() {
+
+    return 'https://github.com/chenbz777/html_extension';
+  }
+
   get router() {
 
-    const getUrlParameter = () => {
+    const getParameter = () => {
       const query = location.search.substring(1);
       const vars = query.split("&");
 
@@ -34,7 +39,7 @@ class UserDefined {
       open: location.href,  // fn
       replace: location.replace,  // fn, 相当于完全重载页面,不保留前进后退
       reload: location.reload,  // fn, 重载页面,保留前进后退
-      parameter: getUrlParameter(),
+      getParameter,  // fn
     }
   }
 
@@ -304,7 +309,7 @@ class UserDefined {
     }
 
     return {
-      getTitle: document.title,
+      title: document.title,
       setTitle,  // fn
       ua: navigator.userAgent,
       url: document.URL,

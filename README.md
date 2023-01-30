@@ -22,7 +22,11 @@
 window.ud.version  // 1.0.0
 ```
 
+### 文档
 
+```js
+window.ud.docs  // https://github.com/chenbz777/html_extension
+```
 
 ### 路由
 
@@ -46,7 +50,7 @@ window.ud.router.replace()
 window.ud.router.reload()
 
 // 获取地址栏参数
-window.ud.router.parameter  // {}
+window.ud.router.getParameter()  // {}
 ```
 
 
@@ -104,7 +108,7 @@ window.ud.request.destroy('url', 'data', 'header')
 
 ```js
 // 获取页面标题
-window.ud.page.getTitle
+window.ud.page.title
 
 // 设置页面标题
 window.ud.page.setTitle('title')
