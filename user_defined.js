@@ -158,13 +158,18 @@ class UserDefined {
 
       const request = new XMLHttpRequest();
 
-      // 超时时间，单位是毫秒
-      request.timeout = 6 * 1000;
-
       // 允许携带cookie
       // request.withCredentials = true;
 
-      let { method = 'GET', url, header = {}, data = {} } = config;
+      let { method = 'GET', url, header = {}, data = {}, loading = false, timeout = 6 * 1000 } = config;
+
+      // 超时时间，单位是毫秒
+      request.timeout = timeout;
+
+      // 是否显示loading
+      if (loading) {
+        this.loading.show();
+      }
 
       if (method === 'GET') {
         let tempData = '?';
@@ -189,15 +194,16 @@ class UserDefined {
 
           if (request.readyState === request.DONE) {
             if (request.status === 200) {
+
               const response = JSON.parse(request.response);
 
               // console.log('请求完成: ', url);
               // console.log('响应数据: ', response);
 
               if (response.code !== 200) {
-                reject(`响应code异常: ${response.code}/${response.msg}`)
+                reject(`响应code异常: ${response.code}/${response.msg || response.message || '请求失败'}`)
               } else {
-                resolve(response.data);
+                resolve(response);
               }
 
             } else {
@@ -222,54 +228,60 @@ class UserDefined {
 
         request.open(method, url, true);
 
-        // console.log('request: ', request);
+        request.onloadend = () => {
+          if (loading) {
+            this.loading.close();
+          }
+        }
 
         // 设置header
         for (const key in header) {
           request.setRequestHeader(key, header[key]);
         }
 
+        // console.log('request: ', request);
+
         request.send(method === 'GET' ? 'null' : JSON.stringify(data));
       });
     }
 
-    const get = (url, data, header) => {
+    const get = (url, data, config) => {
 
       return baseRequest({
         method: 'GET',
         url,
         data,
-        header
+        ...config,
       });
     }
 
-    const post = (url, data, header) => {
+    const post = (url, data, config) => {
 
       return baseRequest({
         method: 'POST',
         url,
         data,
-        header
+        ...config,
       });
     }
 
-    const put = (url, data, header) => {
+    const put = (url, data, config) => {
 
       return baseRequest({
         method: 'PUT',
         url,
         data,
-        header
+        ...config,
       });
     }
 
-    const destroy = (url, data, header) => {
+    const destroy = (url, data, config) => {
 
       return baseRequest({
         method: 'DELETE',
         url,
         data,
-        header
+        ...config,
       });
     }
 
