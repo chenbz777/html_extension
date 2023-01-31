@@ -201,13 +201,13 @@ class UserDefined {
               // console.log('响应数据: ', response);
 
               if (response.code !== 200) {
-                reject(`响应code异常: ${response.code}/${response.msg || response.message || '请求失败'}`)
+                reject(`响应code异常: ${url} | ${response.code} | ${response.msg || response.message || '请求失败'}`)
               } else {
                 resolve(response);
               }
 
             } else {
-              reject('请求错误状态码: ' + request.status)
+              reject(`响应错误状态码: ${url} | ${request.status}`)
             }
           }
         };
