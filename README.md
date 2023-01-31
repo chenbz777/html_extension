@@ -95,9 +95,9 @@ window.ud.cookie.getJson('key')
 
 ```js
 const config = {
-  loading: false,
-  timeout: 6 * 1000,
-  data: {}
+  loading: false,  // 默认值
+  timeout: 6 * 1000,  // 默认值
+  data: {}  // 默认值
 }
 
 // get
@@ -160,7 +160,8 @@ window.ud.utils.getTokenValue('token')
 
 // 格式化时间
 // 'yyyy-MM-dd hh:mm:ss' or 'yyyy-MM-dd' or 'hh:mm:ss'
-window.ud.utils.formatDate('yyyy-MM-dd hh:mm:ss')
+// 默认值 => 'yyyy-MM-dd hh:mm:ss'
+window.ud.utils.formatDate()
 
 // 获取value类型
 window.ud.utils.getValueType('value')  // string
