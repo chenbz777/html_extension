@@ -73,6 +73,9 @@ window.ud.cookie.get('key')
 // 设置cookie
 window.ud.cookie.set('key', 'value')
 
+// 设置cookie有效期,单位s
+window.ud.cookie.set('key', 'value', 60)
+
 // 删除cookie
 window.ud.cookie.remove('key')
 
