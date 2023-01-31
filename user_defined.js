@@ -245,42 +245,38 @@ class UserDefined {
       });
     }
 
-    const get = (url, data, config) => {
+    const get = (url, config) => {
 
       return baseRequest({
         method: 'GET',
         url,
-        data,
         ...config,
       });
     }
 
-    const post = (url, data, config) => {
+    const post = (url, config) => {
 
       return baseRequest({
         method: 'POST',
         url,
-        data,
         ...config,
       });
     }
 
-    const put = (url, data, config) => {
+    const put = (url, config) => {
 
       return baseRequest({
         method: 'PUT',
         url,
-        data,
         ...config,
       });
     }
 
-    const destroy = (url, data, config) => {
+    const destroy = (url, config) => {
 
       return baseRequest({
         method: 'DELETE',
         url,
-        data,
         ...config,
       });
     }

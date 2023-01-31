@@ -91,17 +91,23 @@ window.ud.cookie.getJson('key')
 ### 请求
 
 ```js
+const config = {
+  loading: false,
+  timeout: 6 * 1000,
+  data: {}
+}
+
 // get
-window.ud.request.get('url', 'data', 'header')
+window.ud.request.get('url', config)
 
 // post
-window.ud.request.post('url', 'data', 'header')
+window.ud.request.post('url', config)
 
 // put
-window.ud.request.put('url', 'data', 'header')
+window.ud.request.put('url', config)
 
 // delete
-window.ud.request.destroy('url', 'data', 'header')
+window.ud.request.destroy('url', config)
 ```
 
 > ##### 注意
