@@ -6,9 +6,15 @@
 
 ## 引入
 
-```html
+```bash
+# cdn
+# <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/chenbz777/html_extension/user_defined.js"></script>
+
+# 推荐下载文件本地引入，cdn可能有挂掉的风险
 <script type="text/javascript" src="./user_defined.js"></script>
 ```
+
+> cdn使用了jsdelivr提供的帮助，引用规则为 https://cdn.jsdelivr.net/gh/github用户名/仓库名@版本号/文件路径
 
 
 
