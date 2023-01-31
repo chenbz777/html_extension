@@ -160,8 +160,9 @@ window.ud.utils.getTokenValue('token')
 
 // 格式化时间
 // 'yyyy-MM-dd hh:mm:ss' or 'yyyy-MM-dd' or 'hh:mm:ss'
-// 默认值 => 'yyyy-MM-dd hh:mm:ss'
-window.ud.utils.formatDate()
+// format默认值 => 'yyyy-MM-dd hh:mm:ss'
+// date默认值 => new Date()
+window.ud.utils.formatDate('yyyy-MM-dd hh:mm:ss', new Date())
 
 // 获取value类型
 window.ud.utils.getValueType('value')  // string
